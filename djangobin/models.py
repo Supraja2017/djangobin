@@ -2,6 +2,7 @@ from django.db import models
 from pygments import lexers, highlight
 from pygments.formatters import HtmlFormatter, ClassNotFound
 from django.shortcuts import reverse
+import time
 from .utils import Preference as Pref
 
 # Create your models here.
@@ -65,6 +66,9 @@ class Snippet(models.Model):
 
 	def get_absolute_url(self):
 		return reverse('django:trending_snippets', args=[self.slug])
+
+	#
+
 
 
 class Tag(models.Model):
